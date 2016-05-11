@@ -35,7 +35,7 @@ double findMedianSortedArrays(int *nums1, int nums1Size, int *nums2, int nums2Si
 		return 0.0;
 	int len = nums1Size + nums2Size;
 	if (len & 0x1)
-		return findmth(nums1, nums1Size, nums2, nums2Size, len/2 );
+		return findmth(nums1, nums1Size, nums2, nums2Size, len/2 + 1);
 	else 
 		return (findmth(nums1, nums1Size, nums2, nums2Size, len/2) + 
 			findmth(nums1, nums1Size, nums2, nums2Size, len/2 + 1))/2;
