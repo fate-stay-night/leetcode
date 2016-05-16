@@ -33,7 +33,9 @@ char *longestPalindrome(char *s)
 	int slen = strlen(s);
 	for (num = 0; num < slen; num++) {
 		for (subnum = slen - num; subnum > 0; subnum--) {
-			if(ispalindrome(s + num,subnum) > max) {
+			if (max >= subnum)
+				break;
+			if (ispalindrome(s + num,subnum) > max) {
 				max = subnum;
 				if (subs)
 					free(subs);
