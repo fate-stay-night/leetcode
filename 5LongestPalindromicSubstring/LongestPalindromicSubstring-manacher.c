@@ -38,7 +38,7 @@ char *longestPalindrome(char *s)
         int id = 0, mx= 0;
         for (int i = 1; i < tlen-1; i++) {
                 if (id > 0 && (mx-i) >=0)
-                    P[i] = (mx > i) ? (P[2 * id -1] < (mx-i) ? P[2*id -1] : mx-i) : 0;
+                    P[i] = (mx > i) ? (P[2 * id -i] < (mx-i) ? P[2*id -1] : mx-i) : 0;
                 // while (*(T+i+1+P[i]) == *(T+i-1-P[i])) {
                 //         P[i]++;
                 // }
