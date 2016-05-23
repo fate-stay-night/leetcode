@@ -26,5 +26,8 @@
 
 bool isMatch(char *s, char *p)
 {
-
+	int len = strlen(s);
+	for (int i = 0; i < len; i++) {
+		
+	}
 }
