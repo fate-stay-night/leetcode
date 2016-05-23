@@ -8,3 +8,4 @@
 * 6 ZigZag Conversion/锯齿型字符串
 * 7 Reverse Integer/整形数倒置
 * 8 String to Integer/字符串转换整数
+* 9 Palindrome Integer/数字回文
