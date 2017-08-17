@@ -5,6 +5,8 @@ import xyz.vimtool.commons.ListNode;
 /**
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
  *
+ * 采用分治法，
+ *
  * @author zhangzheng
  * @version 1.0.0
  * @date 2017-8-3
@@ -12,14 +14,18 @@ import xyz.vimtool.commons.ListNode;
 public class Solution {
 
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length == 0) {
+        if (lists == null || lists.length == 0) {
             return null;
         }
-        ListNode head = lists[0];
-        for (int i = 1, len = lists.length; i < len; i++) {
-            head = mergeTwoLists(head, lists[i]);
+        return separate(lists, 0, lists.length - 1);
+    }
+
+    public ListNode separate(ListNode[] lists, int low, int high) {
+        if (low < high) {
+            int middle = (low + high) / 2;
+            return mergeTwoLists(separate(lists, low, middle), separate(lists, middle + 1, high));
         }
-        return head;
+        return lists[low];
     }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
